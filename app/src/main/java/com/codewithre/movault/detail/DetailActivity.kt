@@ -2,7 +2,7 @@ package com.codewithre.movault.detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.viewModels
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat.getParcelableExtra
@@ -10,15 +10,12 @@ import com.bumptech.glide.Glide
 import com.codewithre.movault.BuildConfig
 import com.codewithre.movault.R
 import com.codewithre.movault.core.domain.model.Movie
-import com.codewithre.movault.core.ui.ViewModelFactory
 import com.codewithre.movault.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityDetailBinding
-    private val viewModel: DetailViewModel by viewModels<DetailViewModel> {
-        ViewModelFactory.getInstance(this)
-    }
+    private val viewModel: DetailViewModel by viewModel()
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

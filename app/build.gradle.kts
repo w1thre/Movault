@@ -75,6 +75,5 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.recyclerview)
     
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
+    implementation(libs.koin.android)
 }

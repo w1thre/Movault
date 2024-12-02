@@ -9,7 +9,7 @@ import androidx.core.content.IntentCompat.getParcelableExtra
 import com.bumptech.glide.Glide
 import com.codewithre.movault.BuildConfig
 import com.codewithre.movault.R
-import com.codewithre.movault.core.domain.model.Movie
+import com.codewithre.core.domain.model.Movie
 import com.codewithre.movault.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {

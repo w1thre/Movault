@@ -1,7 +1,7 @@
 package com.codewithre.movault
 
 import android.app.Application
-import com.codewithre.movault.core.di.*
+import com.codewithre.core.di.*
 import com.codewithre.movault.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -20,7 +20,7 @@ class MyApplication : Application() {
                     networkModule,
                     repositoryModule,
                     useCaseModule,
-                    viewModelModule
+                    viewModelModule,
                 )
             )
         }

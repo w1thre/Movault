@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Movault"
 include(":app")
 include(":core")
+include(":favorite")

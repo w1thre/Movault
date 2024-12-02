@@ -1,16 +1,15 @@
 package com.codewithre.movault
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.codewithre.movault.databinding.ActivityMainBinding
-import com.codewithre.movault.favorite.FavoriteFragment
 import com.codewithre.movault.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -57,11 +56,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.app_name)
             }
             R.id.nav_favorite -> {
-                fragment = FavoriteFragment()
-                title = getString(R.string.menu_favorite)
-            }
-            R.id.nav_map -> {
-                Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+                val uri = Uri.parse("movault://fav")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
 

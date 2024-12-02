@@ -4,14 +4,12 @@ import com.codewithre.core.data.Resource
 import com.codewithre.core.domain.model.Movie
 import com.codewithre.core.domain.repository.IMovieRepository
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.BDDMockito.*
 import org.mockito.InjectMocks
 import org.mockito.Mock
-import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -83,7 +81,7 @@ class MovieInteractorTest {
     }
 
     @Test
-    fun `should set movie as favorite when setFavMovie is called`() = runBlocking {
+    fun `should set movie as favorite when setFavMovie is called`() {
         // Given
         val movie = Movie(
             id = 1,

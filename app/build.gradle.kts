@@ -48,4 +48,5 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    api(libs.junit)
 }

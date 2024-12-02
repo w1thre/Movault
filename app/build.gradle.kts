@@ -49,4 +49,6 @@ android {
 dependencies {
     implementation(project(":core"))
     api(libs.junit)
+    api(libs.androidx.junit)
+    api(libs.mockito.core)
 }

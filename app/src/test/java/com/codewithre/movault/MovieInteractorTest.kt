@@ -1,8 +1,9 @@
-package com.codewithre.core.domain.usecase
+package com.codewithre.movault
 
 import com.codewithre.core.data.Resource
 import com.codewithre.core.domain.model.Movie
 import com.codewithre.core.domain.repository.IMovieRepository
+import com.codewithre.core.domain.usecase.MovieInteractor
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Before
 import org.junit.Test
@@ -74,7 +75,7 @@ class MovieInteractorTest {
         given(movieRepository.getFavMovie()).willReturn(resourceFlow)
 
         // When
-        val result = movieInteractor.getFavMovie()
+        movieInteractor.getFavMovie()
 
         // Then
         then(movieRepository).should().getFavMovie()

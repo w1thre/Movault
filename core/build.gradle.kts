@@ -71,4 +71,11 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     api(libs.koin.android)
+    
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
+    
+    debugImplementation(libs.leakcanary.android) {
+        exclude(group = "junit", module = "junit")
+    }
 }

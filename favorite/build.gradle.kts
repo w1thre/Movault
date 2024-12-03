@@ -39,10 +39,11 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":app"))
-    testImplementation("androidx.arch.core:core-testing:2.1.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    api(libs.junit)
-    api(libs.mockito.core)
-    api(libs.androidx.core.ktx)
-    api(libs.androidx.lifecycle.livedata.ktx)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testApi(libs.junit)
+    testApi(libs.mockito.core)
+    testApi(libs.androidx.core.ktx)
+    testApi(libs.androidx.lifecycle.livedata.ktx)
+    debugApi(libs.leakcanary.android)
 }

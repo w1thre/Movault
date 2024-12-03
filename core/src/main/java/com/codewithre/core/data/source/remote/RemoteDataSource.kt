@@ -21,7 +21,7 @@ class RemoteDataSource(private val apiService: com.codewithre.core.data.source.r
             }
     }
     
-    suspend fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
+    fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
         return flow {
             try {
                 val response = apiService.getNowPlayingMovies()

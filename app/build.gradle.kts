@@ -22,7 +22,7 @@ android {
         buildConfigField("String", "IMG_URL", properties["IMG_URL"].toString())
         buildConfigField("String", "API_KEY", properties["API_KEY"].toString())
     }
-
+    
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -48,7 +48,8 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    api(libs.junit)
-    api(libs.androidx.junit)
-    api(libs.mockito.core)
+    testApi(libs.junit)
+    testApi(libs.androidx.junit)
+    testApi(libs.mockito.core)
+    debugApi(libs.leakcanary.android)
 }

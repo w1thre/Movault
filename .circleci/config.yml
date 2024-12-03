@@ -49,6 +49,8 @@ jobs:
       - run:
           name: Run Unit Test
           command: ./gradlew clean test
+      - store_test_results:
+          path: app/build/test-results
 
 workflows:
   build_and_test:

@@ -17,6 +17,7 @@ android {
         
         buildConfigField("String", "BASE_URL", properties["BASE_URL"].toString())
         buildConfigField("String", "IMG_URL", properties["IMG_URL"].toString())
+        buildConfigField("String", "HOSTNAME_URL", properties["HOSTNAME_URL"].toString())
         buildConfigField("String", "API_KEY", properties["API_KEY"].toString())
     }
 

@@ -11,6 +11,7 @@ import com.codewithre.core.domain.repository.IMovieRepository
 import com.codewithre.core.utils.AppExecutors
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -37,6 +38,10 @@ val databaseModule = module {
 val networkModule = module {
     single {
         val token = BuildConfig.API_KEY
+        val hostname = BuildConfig.HOSTNAME_URL
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/k1Hdw5sdSn5kh/gemLVSQD/P4i4IBQEY1tW4WNxh9XM=")
+            .build()
         
         val loggingInterceptor = if(BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -58,6 +63,7 @@ val networkModule = module {
             .addInterceptor(authInterceptor)
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
     single {

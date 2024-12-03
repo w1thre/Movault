@@ -46,10 +46,3 @@ jobs:
       - run:
           name: Run Unit Test
           command: ./gradlew clean test
-workflows:
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build

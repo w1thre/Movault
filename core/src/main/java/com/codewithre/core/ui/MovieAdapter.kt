@@ -1,7 +1,6 @@
 package com.codewithre.core.ui
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -30,14 +29,11 @@ class MovieAdapter : ListAdapter<Movie, MovieAdapter.ListViewHolder>(DIFF_CALLBA
         @SuppressLint("DefaultLocale", "SetTextI18n")
         fun bind(data: Movie) {
             val urlPoster = BuildConfig.IMG_URL + data.posterPath
-            val vote = data.voteAverage
-            val roundVote = String.format("%.1f", vote).toDouble()
-            Log.d("COY", "Ini url poster: $urlPoster")
             Glide.with(itemView.context)
                 .load(urlPoster)
                 .into(binding.ivItemImage)
             binding.tvItemTitle.text = data.title
-            binding.tvItemSubtitle.text = roundVote.toString()
+            binding.tvItemSubtitle.text = data.voteAverage.toString()
         }
         
         init {

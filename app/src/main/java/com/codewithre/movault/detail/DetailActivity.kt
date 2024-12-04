@@ -30,11 +30,10 @@ class DetailActivity : AppCompatActivity() {
     private fun showDetailMovie(detailMovie: Movie?) {
         detailMovie?.let {
             val urlPoster = BuildConfig.IMG_URL + detailMovie.posterPath
-            val roundVote = String.format("%.1f", detailMovie.voteAverage).toDouble()
             supportActionBar?.title = detailMovie.title
             binding.contentDetailMovie.tvDetailTitle.text = detailMovie.title
             binding.contentDetailMovie.tvDetailDescription.text = detailMovie.overview
-            binding.contentDetailMovie.tvDetailRating.text = roundVote.toString()
+            binding.contentDetailMovie.tvDetailRating.text = detailMovie.voteAverage.toString()
             Glide.with(this)
                 .load(urlPoster)
                 .into(binding.ivDetailImage)

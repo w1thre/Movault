@@ -23,3 +23,8 @@
 -keep class java.lang.invoke.** { *; }
 -keep class com.codewithre.core.data.Resource { *; }
 -keepclassmembers class com.codewithre.core.data.Resource$* { *; }
+
+-keep class *Test { *; }
+-keep class org.junit.** { *; }
+-keep class androidx.test.** { *; }
+-keep class org.mockito.** { *; }

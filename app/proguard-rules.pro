@@ -21,3 +21,5 @@
 #-renamesourcefileattribute SourceFile
 -keep class java.lang.String { *; }
 -keep class java.lang.invoke.** { *; }
+-keep class com.codewithre.core.data.Resource { *; }
+-keepclassmembers class com.codewithre.core.data.Resource$* { *; }

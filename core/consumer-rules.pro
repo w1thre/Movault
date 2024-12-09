@@ -85,3 +85,6 @@ public *;
 ##---------------Begin: proguard configuration for RxJava ----------
 # Uncomment if you use RxJava
 #-dontwarn java.util.concurrent.Flow*
+
+-keep class com.codewithre.core.data.Resource { *; }
+-keepclassmembers class com.codewithre.core.data.Resource$* { *; }

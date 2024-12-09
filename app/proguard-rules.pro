@@ -19,10 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class java.lang.String { *; }
--keep class java.lang.invoke.** { *; }
--keep class com.codewithre.core.data.Resource { *; }
--keep class com.codewithre.core.domain.repository.* { *; }
-
--keepclassmembers class com.codewithre.core.domain.repository.* { *; }
--keepclassmembers class com.codewithre.core.data.Resource$* { *; }

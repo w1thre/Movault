@@ -49,4 +49,5 @@ class MovieRepository(
         appExecutors.diskIO().execute { localDataSource.setFavMovies(movieEntity, state)}
     }
     
+    override fun getFavStatus(movieId: Int): Flow<Boolean> = localDataSource.getFavStatus(movieId)
 }

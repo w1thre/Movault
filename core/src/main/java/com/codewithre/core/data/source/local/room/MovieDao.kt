@@ -21,4 +21,7 @@ interface MovieDao {
     
     @Update
     fun updateFavMovies(movie: MovieEntity)
+    
+    @Query("SELECT isFavorite FROM favorite_movies where id = :movieId")
+    fun getFavStatus(movieId: Int): Flow<Boolean>
 }

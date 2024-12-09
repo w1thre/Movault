@@ -10,4 +10,6 @@ interface IMovieRepository {
     fun getFavMovie(): Flow<List<Movie>>
     
     fun setFavMovie(movie: Movie, state: Boolean)
+    
+    fun getFavStatus(movieId: Int): Flow<Boolean>
 }

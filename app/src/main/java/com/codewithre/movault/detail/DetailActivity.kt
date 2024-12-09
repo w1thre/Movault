@@ -2,15 +2,18 @@ package com.codewithre.movault.detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat.getParcelableExtra
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.codewithre.movault.BuildConfig
 import com.codewithre.movault.R
 import com.codewithre.core.domain.model.Movie
 import com.codewithre.movault.databinding.ActivityDetailBinding
+import kotlinx.coroutines.launch
 
 class DetailActivity : AppCompatActivity() {
     
@@ -24,6 +27,19 @@ class DetailActivity : AppCompatActivity() {
         
         val detailMovie = getParcelableExtra(intent, EXTRA_DATA, Movie::class.java)
         showDetailMovie(detailMovie)
+        if (detailMovie != null) {
+            observeFavStatus(detailMovie.id)
+        } else {
+            Toast.makeText(this, getString(R.string.data_tidak_ditemukan), Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun observeFavStatus(movieId: Int) {
+        lifecycleScope.launch {
+            viewModel.getFavStatus(movieId).observe(this@DetailActivity) { statusFav ->
+                setStatusFav(statusFav)
+            }
+        }
     }
     
     @SuppressLint("DefaultLocale", "SetTextI18n")
@@ -43,7 +59,6 @@ class DetailActivity : AppCompatActivity() {
             binding.fab.setOnClickListener {
                 statusFav = !statusFav
                 viewModel.setFavMovie(detailMovie, statusFav)
-                setStatusFav(statusFav)
             }
         }
     }

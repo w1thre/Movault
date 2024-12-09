@@ -19,3 +19,18 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class com.codewithre.core.ui.** { *; }
+-keep class com.codewithre.core.domain.** { *; }
+-keep class com.codewithre.core.di.** { *; }
+-keep class com.codewithre.core.data.Resource { *; }
+
+-keepclassmembers class com.codewithre.core.ui.** { *; }
+-keepclassmembers class com.codewithre.core.domain.** { *; }
+-keepclassmembers class com.codewithre.core.di.** { *; }
+-keepclassmembers class com.codewithre.core.data.Resource$* { *; }
+
+-keep class java.lang.String { *; }
+-keep class java.lang.invoke.** { *; }
+-dontwarn java.lang.invoke.StringConcatFactory
+-keepclassmembers class androidx.lifecycle.LiveData { *; }
+-keepclassmembers class androidx.lifecycle.ViewModel { *; }

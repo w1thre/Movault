@@ -35,9 +35,3 @@
 -dontwarn java.lang.invoke.StringConcatFactory
 -keepclassmembers class androidx.lifecycle.LiveData { *; }
 -keepclassmembers class androidx.lifecycle.ViewModel { *; }
-
-# Keep test classes
--keep class *Test { *; }
--keep class org.junit.** { *; }
--keep class org.mockito.** { *; }
--keep class androidx.test.** { *; }

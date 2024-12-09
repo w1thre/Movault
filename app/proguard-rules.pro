@@ -19,14 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class java.lang.String { *; }
--keep class java.lang.invoke.** { *; }
--keep class com.codewithre.core.data.Resource { *; }
--keepclassmembers class com.codewithre.core.data.Resource$* { *; }
--dontwarn com.codewithre.core.data.Resource
-
-
--keep class *Test { *; }
--keep class org.junit.** { *; }
--keep class androidx.test.** { *; }
--keep class org.mockito.** { *; }

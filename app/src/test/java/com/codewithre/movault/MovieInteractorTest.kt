@@ -1,4 +1,4 @@
-package com.codewithre
+package com.codewithre.movault
 
 import com.codewithre.core.data.Resource
 import com.codewithre.core.domain.model.Movie

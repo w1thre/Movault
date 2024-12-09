@@ -28,6 +28,7 @@
 -keepclassmembers class com.codewithre.core.domain.** { *; }
 -keepclassmembers class com.codewithre.core.di.** { *; }
 -keepclassmembers class com.codewithre.core.data.Resource$* { *; }
+-dontwarn com.codewithre.core.data.Resource
 
 -keep class java.lang.String { *; }
 -keep class java.lang.invoke.** { *; }

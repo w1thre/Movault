@@ -91,6 +91,7 @@ public *;
 
 # Keep your model classes
 -keep class com.codewithre.core.data.source.remote.response.** { *; }
+-keep class com.codewithre.favorite.** { *; }
 
 # Keep annotations used by Gson
 -keepattributes *Annotation*

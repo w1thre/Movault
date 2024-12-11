@@ -33,5 +33,15 @@
 -keep class java.lang.String { *; }
 -keep class java.lang.invoke.** { *; }
 -dontwarn java.lang.invoke.StringConcatFactory
-#-keepclassmembers class androidx.lifecycle.LiveData { *; }
-#-keepclassmembers class androidx.lifecycle.ViewModel { *; }
+-keepclassmembers class androidx.lifecycle.LiveData { *; }
+-keepclassmembers class androidx.lifecycle.ViewModel { *; }
+
+# Keep Gson classes
+-keep class com.google.gson.** { *; }
+-keepattributes Signature
+
+# Keep your model classes
+-keep class com.codewithre.core.data.source.remote.response.** { *; }
+
+# Keep annotations used by Gson
+-keepattributes *Annotation*
